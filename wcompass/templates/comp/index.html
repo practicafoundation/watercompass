@@ -1,0 +1,122 @@
+{% extends "comp/base.html" %}
+{% load i18n  %}
+{% load staticfiles %}
+{% block content %}
+<div class="span-4 last">
+<p class="small" style="margin-top:15px;margin-bottom:0"> <a class="blue_w awesome" style="float:right; font-size: 25px; padding-top:10px; padding-bottom:10px" href="{% url "technologies" %}">{% trans 'To the tool &rarr;' %}</a>
+</p>
+</div>
+
+<div class="push-1 span-11 first">
+	<div class="frame" style="background-color:#EEF8FA">
+		<div class="space15">
+			<h3>Introduction</h3>
+<p>You have arrived at the WaterCompass, a novel (drinking) water technology selection tool. This <a href="{% url "technologies" %}">decision-support software</a> contains almost seventy water management methods applicable in asset-poor, developing region contexts. Grouped from source protection to household water treatment and storage, these methods comprise the current best practice in developing water sectors. This tool will support you to make a better decision on which water technology to choose in your case. A better selection will lead to more sustainability of the water supply.</p>
+		</div>
+	</div>
+</div>
+
+<div class="push-1 span-11 first">
+	<div class="frame" style="background-color:#EEF8FA">
+		<div class="space15">
+
+<p><strong>Features</strong><br/>
+You can use the tool as a simple overview of technologies, and also as a decision-support tool for the selection of suitable water supply technologies for a real setting. For each technology, the WaterCompass contains short multidiciplinary information (<a href="http://www.washalliance.nl/fiets-strategy/" target="_blank">FIETS</a>) on suitability and sustainability. The summaries offer concise information with specific links and <span title="The tool contains several italic terms that give you explanation on specific technological terms"><em>definitions</em></span> where applicable. A tooltip with the defintion will appear if you move your mouse over the italic word. A panel of criteria on the left allow the user to specify the relevant factors for his or her situation.</p>
+
+<p><strong>How to use the WaterCompass</strong><br/>
+Using the WaterCompass consists of firstly choosing preferred technical criteria (there is no need to fill in all criteria/questions, you may leave some blank), and secondly assembling a chain of technologies and lastly documenting your results. To do that, you start by filling in the screening criteria (or at least the factors that you have information about). If you select more options within one criterion, the results will be combined. When clicking on ‘Apply options’, suitable technologies will appear in green, methods with only limited suitability will appear in orange, and methods that are likely not relevant in the context you have indicated appear in red. By clicking on one of the orange or red technologies, the key reasons for the unsuitability will appear in a pop-up summary.</p>
+
+<p>You can build a complete water management chain by selecting individual technologies, which will then appear in an assembly box at the top. When you are ready, you can click 'Continue with selected technologies' which will take you to a page where you create a PDF document of your results.
+</p>
+
+<p><strong>Philosophy of the WaterCompass</strong><br/>
+A key objective of this tool is to aid a more rational selection of water supply and treatment technologies. The automated selection based on researched suitability factors will help you plan or discuss your options in an objective and transparent fashion. The tool is not designed to replace experts, but rather to rationalize their initial selection process, and to easily share the potential options with other (possibly non-expert) stakeholders. For focus group discussions or other multi-stakeholder events, the offline (paper) version of the tool is advised.
+If applied with caution, this tool can be a useful aid in the planning of resilient water options. In stakeholder interactions it may contribute to a more participative attitude in the planning. Together with the linked databases and assessment tools, it is expected to provide an accessible mini-compendium of water management technologies relevant in a development context.
+</p>
+
+<p><strong>Water sources</strong><br/>
+If you leave the <span title="Defines the intended water source for a given project. Many water projects can benefit from multiple water sources. You may want to consider chossing more than one source or leaving it open in order to find the most feasible option"><em>Water source</em></span> screening option empty, the tool will select suitable results from different possible water sources. This will give you an idea on which water source may be the most relevant in the given project or <a href="http://www.washalliance.nl/fiets-strategy/e/" target="_blank">catchment area</a>.
+
+<p><strong>Final remarks</strong><br/>
+	This tool is released as complete as possible. However, especially in case of financial information the scarcity of reliable data forced us to offer broad ranges for cost of implementation or operation and maintenance. Should you have better quality information to include (or just want to offer a remark on the tool), please send your mail to watercompass@practica.org.
+
+<p><strong>Credits</strong><br/>
+WaterCompass was developed by:<br/>
+Gábor L. Szántó, Alida Adams, Robert Vuik and Jan M.J. Nederstigt – PRACTICA Foundation<br/><br/>
+
+The tool software is developed by: <br/>
+Mark Westra, Daniel Karlsson, Gabriel von Heijne – Akvo Foundation<br/><br/>
+
+Active support for the content was received from (in alphabetical order)<br/>
+Winona Azuri – Akvo Foundation<br/>
+Susanne Boom – Wetlands International<br/>
+Dick Bouman – Aqua for All<br/>
+Gert de Bruijne – WASTE<br/>
+Basja Jantowski – RAIN Foundation<br/>
+Alejandro Jiménez – Wetlands International<br/>
+Niels Lenderink – WASTE<br/>
+Maarten Mulder – AMREF<br/>
+Jo Smet – IRC<br/>
+Jannie Willemsen-Zwaagstra – Bètascope/Aqua for All<br/>
+
+		</div>
+	</div>
+</div>
+
+<div class="push-1 span-4 first">
+	<p style="margin-bottom:4px;">Screenshot choosing options </p>
+	<img style="margin-left:0px;" src="{% static "img/extra/options.png" %}" alt="selecting options" />
+	<p style="margin-bottom:4px; margin-top:10px;">Screenshot display of results </p>
+	<img style="margin-left:10px;" src="{% static "img/extra/techs.png" %}" alt="technologies" />
+	<p style="margin-bottom:4px;margin-top:10px;">Screenshot making a selection </p>
+	<img style="margin-left:10px;" src="{% static "img/extra/selection.png" %}" alt="selecting technologies" />
+	<p style="margin-bottom:4px;margin-top:10px;">Screenshot creating a pdf</p>
+	<img style="margin-left:10px;" src="{% static "img/extra/pdf.png" %}" alt="creating pdf" />
+</div>
+
+
+
+<div class="push-1 span-4 last">
+			<br></br>
+			<p style="margin-bottom:4px;">Realised by: </p>
+			<a href="http://www.practicafoundation.nl/">
+				<img src="{% static "img/logos/logo_practica_200.png" %}" alt="Practica Foundation" />
+			</a>
+	</br></br>
+			<a href="http://www.akvo.org">
+				<img src="{% static "img/logos/akvo_logo_200.png"  %}" alt="Akvo" />
+			</a>
+				</br></br>
+				<br></br>
+			<p style="margin-bottom:4px;">In collaboration with: </p>
+				<img src="{% static "img/logos/collab_logo.png"  %}" alt="Collaboration partners" />
+
+
+</div>
+
+<div class="push-1 span-9 last">
+	&nbsp;
+</div>
+<div style="clear:both;">
+
+
+<div class="push-1 span-16 last">
+			<h4>{% trans 'Financial support by' %}:</h4>
+			<a href="http://www.minbuza.nl/">
+				<img src="{% static "img/logos/logo_rijksoverheid.png" %}" alt="Rijksoverheid" />
+			</a><a href="http://www.washalliance.nl/">
+				<img src="{% static "img/logos/dwa_logo.png" %}" alt="Dutch WASH Alliance" />
+			</a>
+
+</div>
+
+		{% comment %}
+		<h2>Help</h2>
+		- <a href="{% url "help" %}" class="fancy">Why use the tool?</a><br><br />
+		- <a href="{% url "demo" %}" class="fancy">Demonstration</a>
+		{% endcomment %}
+	</div>
+
+
+
+{% endblock content %}

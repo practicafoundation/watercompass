@@ -3,10 +3,7 @@
 *.log
 *.py[co]
 *.kpf
-dsp/data/
-dsp/settings_local.py
-dsp/datadir/
-dsp/mediaroot/akvopedia_pdf/
-
-
-dsp/dst/static/pdf_tmp/*
+comp/data/
+venv/*
+wcompass/tmp_pdf/*
+comp/static/pdf_tmp/*

@@ -1,0 +1,96 @@
+{% extends "comp/base_panel.html" %}
+{% load i18n %}
+
+
+{% block panel_title %} {{ technology.name|capfirst }}{% endblock panel_title %}
+{% block panel_content %}
+
+<div class="info-block">
+   <h4>Description&nbsp;&nbsp;</h4>
+	{% autoescape off %}{{ technology.description }}{% endautoescape %}
+</div>
+<div class="info-block color-block">
+	<h4>Financial&nbsp;&nbsp;</h4>
+{% autoescape off %}{{ technology.desc_financial }}{% endautoescape %}
+</div>
+<div class="info-block color-block">
+	<h4>Institutional&nbsp;&nbsp;</h4>
+	{% autoescape off %}{{ technology.desc_institutional }}{% endautoescape %}
+</div>
+<div class="info-block color-block">
+	<h4>Environmental&nbsp;&nbsp;</h4>
+	{% autoescape off %}{{ technology.desc_environmental }}{% endautoescape %}
+</div>
+<div class="info-block color-block">
+	<h4>Techical&nbsp;&nbsp;</h4>
+{% autoescape off %}{{ technology.desc_technical }}{% endautoescape %}
+</div>
+<div class="info-block color-block">
+	<h4>Social</h4>
+{% autoescape off %}{{ technology.desc_social }}{% endautoescape %}
+</div>
+<div style="clear:both; height:10px"></div>
+
+<div id="remarks_col">
+			<h4>Relevant remarks:</h4>
+			{% if relevancy_objects %}
+				{% for object in relevancy_objects  %}
+				    {% if object.note %}
+					    <div class="span-13 first" style="margin:10px 0 0 0;">
+							<div class="prepend-1 first" style="float:left; margin-right:15px;">
+
+								{%ifequal object.get_applicability_display 'No'%}
+									<div style="background:#ed6262; width:10px; height:55px"></div>
+								{% else %}
+									{%ifequal object.get_applicability_display 'Maybe'%}
+										<div style="background:#dab159; width:10px; height:55px"></div>
+									{%endifequal%}
+								{%endifequal%}
+							</div>
+						<div class="span-10" style="float:left;">
+							<div style="color:#005a8b; font-size: 0.875em; margin: 0 0 5px 0;">
+								<strong>{{ object }}</strong> &mdash; selection <strong>{{ object.show_criterion }}</strong>
+							</div>
+							<p>
+								{{ object.note.note }}
+							</p>
+						</div>
+						</div>
+	    		{% endif %}
+			{% endfor %}
+			{% else %}
+				<p>{% trans 'No relevant remarks for ' %} {{ technology }}.</p>
+			{% endif %}
+	</div>
+<div id="links_col">
+<h4>External links:</h4>
+			{% if technology.url_source1 %}
+				<div class="link-block color-block-1">
+				<p>{{technology.url_source1}} - <a href="{{technology.url1}}" target="_blank">{{technology.url_title1}}</a></p>
+			</div>
+			{% endif %}
+			{% if technology.url_source2 %}
+			<div class="link-block color-block-1">
+				<p>{{technology.url_source2}} - <a href="{{technology.url2}}" target="_blank">{{technology.url_title2}}</a></p>
+				</div>
+			{% endif %}
+			{% if technology.url_source3 %}
+			<div class="link-block color-block-1">
+				<p>{{technology.url_source3}} - <a href="{{technology.url3}}" target="_blank">{{technology.url_title3}}</a></p>
+				</div>
+			{% endif %}
+</div>
+
+
+<!--
+{% if settings.DEBUG %}
+    <h5>DEBUG info; Linked techs:</h5>
+    <p><strong>Input</strong><br/>
+        {{technology.display_input|safe}}
+   </p>
+    <p><strong>Output</strong><br/>
+        {{technology.display_output|safe}}
+   </p>
+{% endif %} -->
+
+{% endblock panel_content %}
