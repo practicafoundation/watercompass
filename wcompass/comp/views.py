@@ -360,7 +360,7 @@ def techs_selected(request, model=None, id=None):
             THIS_PATH=os.path.dirname(__file__)
             (HOME,HERE)=os.path.split(THIS_PATH)
             akvopedia_pdf_dir= settings.STATIC_ROOT + '/akvopedia_pdf/'
-            output_dir=settings.STATIC_ROOT + 'tmp_pdf/'
+            output_dir=settings.STATIC_ROOT + 'pdf_tmp/'
 
             output = PdfFileWriter()
             outputStream = open(output_dir+s_name_final, "wb")

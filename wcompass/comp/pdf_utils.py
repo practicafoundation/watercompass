@@ -21,7 +21,7 @@ def create_PDF_akvopedia(URL):
 
     URL_list=URL.split("/")
     article_name=URL_list[-1]
-    tmp_dir=os.path.dirname(__file__)+'tmp_pdf/'
+    tmp_dir=os.path.dirname(__file__)+'pdf_tmp/'
 
     args=[]
     args.append('mw-render')
@@ -47,7 +47,7 @@ def create_PDF_selected_techs(all_chosen_techs,zipped_answerlist,incl_selected,i
 
     THIS_PATH=os.path.dirname(__file__)
     (HOME,HERE)=os.path.split(THIS_PATH)
-    tmp_dir=settings.STATIC_ROOT + 'tmp_pdf/'
+    tmp_dir=settings.STATIC_ROOT + 'pdf_tmp/'
 
     PAGE_HEIGHT=defaultPageSize[1]
     PAGE_WIDTH=defaultPageSize[0]
@@ -73,9 +73,9 @@ def create_PDF_selected_techs(all_chosen_techs,zipped_answerlist,incl_selected,i
 
         THIS_PATH=os.path.dirname(__file__)
         (HOME,HERE)=os.path.split(THIS_PATH)
-        pic2=settings.STATIC_ROOT + 'static/img/logos/logo_practica.png'
+        pic2=settings.STATIC_ROOT + 'img/logos/logo_practica.png'
         canvas.drawImage(pic2,15*cm, 27*cm)
-        pic1=settings.STATIC_ROOT + 'static/img/logos/akvo_logo_white.png'
+        pic1=settings.STATIC_ROOT + 'img/logos/akvo_logo_white.png'
         canvas.drawImage(pic1,15*cm, 25*cm)
 
         LEADING=0.5*cm
@@ -176,7 +176,7 @@ def create_PDF_selected_techs(all_chosen_techs,zipped_answerlist,incl_selected,i
         if incl_selected:
             THIS_PATH=os.path.dirname(__file__)
             (HOME,HERE)=os.path.split(THIS_PATH)
-            MEDIA_PATH=settings.STATIC_ROOT + 'static/technologies/'
+            MEDIA_PATH=settings.STATIC_ROOT + 'technologies/'
 
             styles.add(ParagraphStyle(name='smallfont', fontName='Helvetica',fontSize=8))
             smallfont=styles["smallfont"]
@@ -270,7 +270,7 @@ def create_PDF_selected_techs(all_chosen_techs,zipped_answerlist,incl_selected,i
 
         THIS_PATH=os.path.dirname(__file__)
         (HOME,HERE) = os.path.split(THIS_PATH)
-        MEDIA_PATH = settings.STATIC_ROOT + 'static/technologies/'
+        MEDIA_PATH = settings.STATIC_ROOT + '/technologies/'
 
         for tech, relevance_objects in all_chosen_techs:
               if not tech=='':

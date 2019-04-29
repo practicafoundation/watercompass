@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -28,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.120.62.237','127.0.0.1']
 
 
 # Application definition
@@ -126,6 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), "")
-PDF_PATH =  STATIC_ROOT + 'tmp_pdf/'
+STATIC_URL = '/static/' # used during development
+# STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), "")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/') # this is where all the static files will be collected after running python manage.py collectstatic
+PDF_PATH =  STATIC_ROOT + 'pdf_tmp/'
