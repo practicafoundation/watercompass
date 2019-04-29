@@ -1,18 +1,19 @@
 #!/bin/bash
 
-virtualenv venv
+sudo pip3 install virtualenv
+virtualenv -p virtualenv --python=/usr/bin/python3.6 venv
 source venv/bin/activate
 
-pip install Django
-pip install Pillow
-pip install Pygments
-pip install docutils
-pip install markdown2
-pip install pdfrw
-pip install PyPDF2
-pip install reportlab
-pip install rst2pdf
-pip install dj-database-url
-pip install gunicorn
-pip install mysql-connector
-pip install uwsgi
+pip3 install Django
+pip3 install Pillow
+pip3 install Pygments
+pip3 install docutils
+pip3 install markdown2
+pip3 install pdfrw
+pip3 install PyPDF2
+pip3 install reportlab
+pip3 install rst2pdf
+pip3 install dj-database-url
+pip3 install gunicorn
+pip3 install mysql-connector
+pip3 install uwsgi

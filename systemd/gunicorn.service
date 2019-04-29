@@ -1,0 +1,14 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/watercompass/wcompass
+Environment="PATH=/home/ubuntu/watercompass/venv/bin"
+ExecStart=/home/ubuntu/watercompass/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/watercompass/wcompass.sock wcompass.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

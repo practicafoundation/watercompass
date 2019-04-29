@@ -1,0 +1,18 @@
+server {
+    listen 80;
+
+    location /static/ {
+      root /home/ubuntu/watercompass/wcompass;
+    }
+
+    location / {
+      include proxy_params;
+      return 301 http://3.120.62.237/technologies;
+    }
+
+    location /technologies {
+      include proxy_params;
+      proxy_pass http://unix:/run/gunicorn.sock;
+    }
+
+}
