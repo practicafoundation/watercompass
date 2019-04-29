@@ -33,7 +33,6 @@ sudo systemctl enable gunicorn
 # sudo systemctl status gunicorn.socket
 # sudo systemctl status gunicorn
 
-
 sudo cp /home/ubuntu/watercompass/nginx/wcompass /etc/nginx/sites-available/
 sudo rm /etc/nginx/sites-enabled/default
 sudo rm /etc/nginx/sites-enabled/wcompass
