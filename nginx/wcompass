@@ -1,5 +1,6 @@
 server {
     listen 80;
+    server_name watercompass.info;
 
     location /static/ {
       root /home/ubuntu/watercompass/wcompass;
@@ -14,5 +15,14 @@ server {
       include proxy_params;
       proxy_pass http://unix:/run/gunicorn.sock;
     }
+}
 
+server {
+    listen 80;
+
+    # Listen to your server ip address
+    server_name 3.120.62.237;
+
+    # Redirect all traffic comming from your-server-ip to your domain
+    return 301 $scheme://watercompass.info$request_uri;
 }

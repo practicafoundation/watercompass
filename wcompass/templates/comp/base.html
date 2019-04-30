@@ -3,6 +3,16 @@
 <!DOCTYPE html>
 <html lang="{{ request.LANGUAGE_CODE }}">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139306185-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-139306185-1');
+  </script>
+  
 	<link rel="icon"
       type="image/png"
       href="{% static "img/logos/WaterCompassIcon.png" %}">
@@ -18,18 +28,14 @@
 	<link rel="stylesheet" href="{% static "fancybox/fancybox.css" %}" type="text/css" media="screen" title="main">
 
 	<style type="text/css" media="screen">
-
 		{% block inline_styles %}
 		body {
 			background-color:#f4f4f4;
 		}
-
 		#maincontainer {
 			background-color:#fff;
 		}
-
 		{% endblock inline_styles %}
-
 	</style>
 
 </head>

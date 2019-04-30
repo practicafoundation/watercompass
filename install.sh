@@ -45,6 +45,10 @@ sudo ln -s /etc/nginx/sites-available/wcompass /etc/nginx/sites-enabled/wcompass
 sudo systemctl daemon-reload
 sudo service nginx restart
 
+# reload nginx:
+# sudo service nginx reload
+
+
 # install firewall
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
