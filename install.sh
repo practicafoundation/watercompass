@@ -55,4 +55,5 @@ sudo ufw default allow outgoing
 sudo ufw allow 'Nginx HTTP'
 sudo ufw allow 'OpenSSH'
 sudo ufw allow ssh
+sudo ufw allow https
 sudo ufw enable

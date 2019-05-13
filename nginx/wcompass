@@ -34,7 +34,7 @@ server {
 
   location / {
     include proxy_params;
-    return 301 http://watercompass.info/technologies;
+    return 301 https://watercompass.info/technologies;
   }
 
   location /technologies {
