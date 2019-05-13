@@ -296,7 +296,7 @@ def techs_selected(request, model=None, id=None):
         if not relevance_added:
             relevance.append(empty)
 
-    all_chosen_techs = zip(all_techs,relevance)
+    all_chosen_techs = list(zip(all_techs,relevance))
 
     if request.method == 'POST': # If the form has been submitted...
         form = PDF_prefs(request.POST) # A form bound to the POST data
@@ -339,7 +339,7 @@ def techs_selected(request, model=None, id=None):
                 old_factor = new_factor
 
 
-            zipped_answerlist = zip(factor_list,change_list,criterion_list,applicable_list)
+            zipped_answerlist = list(zip(factor_list,change_list,criterion_list,applicable_list))
 
             # This will generate all akvopedia articles in pdf form from the wiki. Needs to be done only once.
             #initialize_Akvopedia_articles()
@@ -507,7 +507,7 @@ def solution(request):
 
     # if we want to transpose the data:
     #all_techs = map(None, *group_techs)
-    all_techs = zip(groups, group_techs)
+    all_techs = list(zip(groups, group_techs))
     return {
         'techgroups'    : groups,
         'all_techs'     : all_techs,

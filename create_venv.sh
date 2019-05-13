@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo pip3 install virtualenv
+# when run on a mac, you need --python=python3.6
 virtualenv -p virtualenv --python=/usr/bin/python3.6 venv
 source venv/bin/activate
 

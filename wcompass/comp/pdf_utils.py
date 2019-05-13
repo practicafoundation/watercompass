@@ -16,7 +16,6 @@ from reportlab.platypus.flowables import Spacer, HRFlowable, PageBreak
 from reportlab.lib import colors
 from django.utils.html import strip_tags
 
-
 def create_PDF_akvopedia(URL):
 
     URL_list=URL.split("/")
@@ -270,7 +269,7 @@ def create_PDF_selected_techs(all_chosen_techs,zipped_answerlist,incl_selected,i
 
         THIS_PATH=os.path.dirname(__file__)
         (HOME,HERE) = os.path.split(THIS_PATH)
-        MEDIA_PATH = settings.STATIC_ROOT + '/technologies/'
+        MEDIA_PATH = settings.STATIC_ROOT + 'technologies/'
 
         for tech, relevance_objects in all_chosen_techs:
               if not tech=='':

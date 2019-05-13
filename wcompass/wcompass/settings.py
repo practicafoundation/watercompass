@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['3.120.62.237','watercompass.info']
+ALLOWED_HOSTS = ['3.120.62.237','watercompass.info','www.watercompass.info']
 
 
 # Application definition
